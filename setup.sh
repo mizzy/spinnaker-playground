@@ -30,3 +30,5 @@ hal config security api edit \
     http://`curl -s http://169.254.169.254/latest/meta-data/public-hostname`:8084
 
 sudo hal deploy apply
+
+sudo systemctl daemon-reload
