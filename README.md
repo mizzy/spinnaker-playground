@@ -41,5 +41,5 @@ Acccess to `http://ec2-xx-xx-xx-xx.ap-northeast-1.compute.amazonaws.com:9000` .
 ## Remove spinnaker setup
 
 ```
-$ terreform destroy
+$ terraform destroy
 ```
