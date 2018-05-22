@@ -2,8 +2,8 @@
 
 # Install and run halyard
 # https://www.spinnaker.io/setup/install/halyard/
-curl -q -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
-sudo bash InstallHalyard.sh
+curl -s -q -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
+sudo bash InstallHalyard.sh --user ubuntu
 
 # https://www.spinnaker.io/setup/install/storage/s3/
 hal config storage s3 edit --region ap-northeast-1
