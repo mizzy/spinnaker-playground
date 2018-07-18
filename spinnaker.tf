@@ -12,3 +12,11 @@ module "spinnaker" {
 output "public_dns" {
   value = "${module.spinnaker.public_dns}"
 }
+
+output "access_key_id" {
+  value = "${module.spinnaker.access_key_id}"
+}
+
+output "secret_access_key" {
+  value = "${module.spinnaker.secret_access_key}"
+}
