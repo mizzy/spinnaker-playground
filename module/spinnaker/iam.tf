@@ -85,7 +85,12 @@ resource "aws_iam_user" "spinnaker" {
   name = "Spinnaker"
 }
 
+resource "aws_iam_user_policy_attachment" "power_user_access" {
+  user       = "${aws_iam_user.spinnaker.name}"
+  policy_arn = "arn:aws:iam::aws:policy/PowerUserAccess"
+}
+
 resource "aws_iam_user_policy_attachment" "spinnaker_assume_role_policy" {
   user       = "${aws_iam_user.spinnaker.name}"
-  policy_arn =     "${aws_iam_policy.spinnaker_assume_role_policy.arn}"
+  policy_arn = "${aws_iam_policy.spinnaker_assume_role_policy.arn}"
 }
