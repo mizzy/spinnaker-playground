@@ -15,4 +15,5 @@ variable "volume_size" {
 variable "managing_account_id" {}
 variable "managed_account_id" {}
 
-  
+variable "spinnaker_user_public_key" {}
+

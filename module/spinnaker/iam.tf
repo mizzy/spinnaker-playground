@@ -143,3 +143,8 @@ resource "aws_iam_role" "spinnaker_managed" {
 }
 EOF
 }
+
+resource "aws_key_pair" "spinnakercourse" {
+  key_name   = "Spinnakercourse"
+  public_key = "${var.spinnaker_user_public_key}"
+}
