@@ -26,3 +26,6 @@ resource "aws_subnet" "external-a" {
   }
 }
 
+resource "aws_internet_gateway" "spinnaker" {
+    vpc_id = "${aws_vpc.defaultvpc.id}"
+}
