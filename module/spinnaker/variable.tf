@@ -17,3 +17,5 @@ variable "managed_account_id" {}
 
 variable "spinnaker_user_public_key" {}
 
+variable "spinnaker_s3_bucket_name" {}
+
