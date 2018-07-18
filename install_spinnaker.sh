@@ -3,7 +3,7 @@
 # Install and run halyard
 # https://www.spinnaker.io/setup/install/halyard/
 curl -s -q -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
-sudo bash InstallHalyard.sh
+sudo bash InstallHalyard.sh --user ubuntu
 
 # Set persistent storage
 # https://www.spinnaker.io/setup/install/storage/s3/
