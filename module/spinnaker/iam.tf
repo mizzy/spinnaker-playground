@@ -98,3 +98,48 @@ resource "aws_iam_user_policy_attachment" "spinnaker_assume_role_policy" {
 resource "aws_iam_access_key" "spinnaker" {
   user    = "${aws_iam_user.spinnaker.name}"
 }
+
+resource "aws_iam_policy" "spinnaker_pass_role" {
+    name        = "SpinnakerPassRole"
+    path        = "/"
+    description = ""
+    policy      = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::${var.managing_account_id}:role/BaseIAMRole"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role" "spinnaker_managed" {
+    name               = "spinnakerManaged"
+    path               = "/"
+    assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "${aws_iam_user.spinnaker.arn}"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
