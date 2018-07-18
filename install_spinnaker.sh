@@ -3,7 +3,7 @@
 # Install and run halyard
 # https://www.spinnaker.io/setup/install/halyard/
 curl -s -q -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
-sudo bash InstallHalyard.sh --user ubuntu
+sudo bash InstallHalyard.sh
 
 # Set persistent storage
 # https://www.spinnaker.io/setup/install/storage/s3/
@@ -31,4 +31,11 @@ hal config security api edit \
 
 sudo hal deploy apply
 
-sudo systemctl daemon-reload
+sudo systemctl restart apache2
+sudo systemctl restart gate
+sudo systemctl restart orca
+sudo systemctl restart igor
+sudo systemctl restart front50
+sudo systemctl restart echo
+sudo systemctl restart clouddriver
+sudo systemctl restart rosco
