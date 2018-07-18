@@ -20,3 +20,7 @@ output "access_key_id" {
 output "secret_access_key" {
   value = "${module.spinnaker.secret_access_key}"
 }
+
+output "account_id" {
+  value = "${module.spinnaker.account_id}"
+}
