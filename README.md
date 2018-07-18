@@ -28,11 +28,11 @@ $ terraform init
 $ terraform apply
 ```
 
-Run setup.sh to setup spinnaker.
+Run install_spinnaker.sh to setup spinnaker.
 
 ```
 $ ssh ec2-xx-xx-xx-xx.ap-northeast-1.compute.amazonaws.com \
-  'curl -s https://raw.githubusercontent.com/mizzy/spinnaker-playground/master/setup.sh | sh'
+  'curl -s https://raw.githubusercontent.com/mizzy/spinnaker-playground/master/install_spinnaker.sh | sh'
 ```
 
 Acccess to `http://ec2-xx-xx-xx-xx.ap-northeast-1.compute.amazonaws.com:9000` .
