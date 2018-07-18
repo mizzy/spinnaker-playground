@@ -24,5 +24,3 @@ sudo systemctl restart echo
 sudo systemctl restart clouddriver
 sudo systemctl restart rosco
 
-sed -i -e "s/\$access_key_id/$access_key_id/g" configure_spinnaker.sh
-
