@@ -8,7 +8,10 @@ Edit `spinnaker.tf`
 module "spinnaker" {
   source = "./module/spinnaker"
   key_name = "your_ssh_key_name"
-  
+  managing_account_id = "xxxxxxxxxxxx"
+  managed_account_id = "xxxxxxxxxxxx"
+  spinnaker_user_public_key = "ssh-rsa ..."
+
   /* These are defaults. You can overrive them.
     instance_type = "c5.large"
     security_group = "default"
@@ -19,6 +22,8 @@ module "spinnaker" {
 output "public_dns" {
   value = "${module.spinnaker.public_dns}"
 }
+
+...
 ```
 
 Run terraform to create ec2 instance.
@@ -28,11 +33,10 @@ $ terraform init
 $ terraform apply
 ```
 
-Run install_spinnaker.sh to setup spinnaker.
+Run setup.sh
 
 ```
-$ ssh ec2-xx-xx-xx-xx.ap-northeast-1.compute.amazonaws.com \
-  'curl -s https://raw.githubusercontent.com/mizzy/spinnaker-playground/master/install_spinnaker.sh | sh'
+$ ./setup.sh
 ```
 
 Acccess to `http://ec2-xx-xx-xx-xx.ap-northeast-1.compute.amazonaws.com:9000` .
