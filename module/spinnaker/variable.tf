@@ -12,3 +12,7 @@ variable "volume_size" {
   default = "100"
 }
 
+variable "managing_account_id" {}
+variable "managed_account_id" {}
+
+  
