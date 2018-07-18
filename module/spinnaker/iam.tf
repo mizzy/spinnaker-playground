@@ -144,6 +144,16 @@ resource "aws_iam_role" "spinnaker_managed" {
 EOF
 }
 
+resource "aws_iam_role_policy_attachment" "power_user_access" {
+  role       = "${aws_iam_role.spinnaker_managed.name}"
+  policy_arn = "arn:aws:iam::aws:policy/PowerUserAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "spinnaker_pass_role" {
+  role       = "${aws_iam_role.spinnaker_managed.name}"
+  policy_arn = "${aws_iam_policy.spinnaker_pass_role.arn}"
+}
+
 resource "aws_key_pair" "spinnakercourse" {
   key_name   = "Spinnakercourse"
   public_key = "${var.spinnaker_user_public_key}"
