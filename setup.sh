@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 spinnaker_host=`terraform output | grep public_dns | awk '{print $3}'`
 access_key_id=`terraform output | grep access_key_id | awk '{print $3}'`
 secret_access_key=`terraform output | grep secret_access_key | awk '{print $3}'`
