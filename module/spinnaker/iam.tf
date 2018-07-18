@@ -94,3 +94,7 @@ resource "aws_iam_user_policy_attachment" "spinnaker_assume_role_policy" {
   user       = "${aws_iam_user.spinnaker.name}"
   policy_arn = "${aws_iam_policy.spinnaker_assume_role_policy.arn}"
 }
+
+resource "aws_iam_access_key" "spinnaker" {
+  user    = "${aws_iam_user.spinnaker.name}"
+}
