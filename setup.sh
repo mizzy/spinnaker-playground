@@ -7,7 +7,7 @@ access_key_id=`terraform output | grep access_key_id | awk '{print $3}'`
 secret_access_key=`terraform output | grep secret_access_key | awk '{print $3}' | sed -e 's/\//\\\\\//g'`
 account_id=`terraform output | grep account_id | awk '{print $3}'`
 
-scp install_spinnaker.sh $spinnaker_host:~/
+scp -o StrictHostKeyChecking=no install_spinnaker.sh $spinnaker_host:~/
 ssh $spinnaker_host chmod +x ./install_spinnaker.sh
 ssh $spinnaker_host ./install_spinnaker.sh
 
