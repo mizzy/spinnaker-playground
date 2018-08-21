@@ -3,7 +3,7 @@
 # Install and run halyard
 # https://www.spinnaker.io/setup/install/halyard/
 curl -s -q -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
-sudo bash InstallHalyard.sh --user ubuntu
+yes Y | sudo bash InstallHalyard.sh --user ubuntu
 
 # Set persistent storage
 # https://www.spinnaker.io/setup/install/storage/s3/
@@ -12,7 +12,7 @@ hal config storage edit --type s3
 
 # Deploy spinnaker
 # https://www.spinnaker.io/setup/install/deploy/
-hal config version edit --version 1.8.2
+hal config version edit --version 1.9.0
 sudo hal deploy apply
 
 # Export ports to external and rewrite base url

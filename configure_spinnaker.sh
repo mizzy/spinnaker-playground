@@ -15,6 +15,8 @@ hal config provider aws enable
 
 sudo hal deploy apply
 
+sudo sed -i -e "s/us-east-1/ap-northeast-1/g" /opt/deck/html/settings.js
+
 sudo systemctl restart apache2
 sudo systemctl restart gate
 sudo systemctl restart orca
