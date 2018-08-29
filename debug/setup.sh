@@ -17,3 +17,14 @@ sed -i -e "s/\$account_id/$account_id/g" configure.sh
 
 scp configure.sh $spinnaker_host:~/
 ssh $spinnaker_host chmod +x ./configure.sh
+git checkout configure.sh
+
+
+
+
+
+
+
+
+
+
