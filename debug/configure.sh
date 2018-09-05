@@ -5,8 +5,8 @@ set -eux
 ./hal config storage s3 edit --region ap-northeast-1
 ./hal config storage edit --type s3
 
-./hal config deploy edit --type=localgit --git-origin-user=mizzy
-./hal config version edit --version 1.9.0
+#./hal config deploy edit --type=localgit --git-origin-user=mizzy
+./hal config version edit --version 1.9.2
 ./hal deploy apply --prep-only
 
 echo "host: 0.0.0.0" | tee \

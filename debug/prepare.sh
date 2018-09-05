@@ -14,4 +14,4 @@ sudo apt-get purge -y nodejs npm
 sudo npm i yarn -g
 sudo chown -R ubuntu ~/.config
 
-git clone https://github.com/mizzy/halyard.git
+git clone https://github.com/spinnaker/halyard.git
