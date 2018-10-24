@@ -19,3 +19,8 @@ scp configure_spinnaker.sh $spinnaker_host:~/
 git checkout configure_spinnaker.sh
 ssh $spinnaker_host chmod +x ./configure_spinnaker.sh
 ssh $spinnaker_host ./configure_spinnaker.sh
+
+# For debugging deck
+#scp setup_node_and_deck.sh $spinnaker_host:~/
+#ssh $spinnaker_host chmod +x ./setup_node_and_deck.sh
+#ssh $spinnaker_host ./setup_node_and_deck.sh
