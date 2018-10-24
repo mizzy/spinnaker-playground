@@ -12,7 +12,7 @@ hal config storage edit --type s3
 
 # Deploy spinnaker
 # https://www.spinnaker.io/setup/install/deploy/
-hal config version edit --version 1.9.2
+hal config version edit --version 1.10.0
 sudo hal deploy apply
 
 # Export ports to external and rewrite base url
