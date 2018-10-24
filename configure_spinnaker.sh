@@ -13,6 +13,10 @@ hal config provider aws account edit my-aws-account \
 
 hal config provider aws enable
 
+hal config provider ecs account add my-ecs-account \
+    --aws-account my-aws-account
+hal config provider ecs enable
+ 
 sudo hal deploy apply
 
 sudo systemctl restart apache2
